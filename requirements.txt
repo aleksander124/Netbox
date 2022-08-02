@@ -1,2 +1,6 @@
 networkscan
 netbox
+ipcalc
+NetBox
+requests
+datetime
