@@ -1,0 +1,12 @@
+wget https://github.com/netbox-community/netbox/archive/v3.2.7.tar.gz
+sudo tar -xzf v3.2.7.tar.gz -C /opt
+sudo ln -sfn /opt/netbox-3.2.7/ /opt/netbox
+sudo cp /opt/netbox-3.1.5/local_requirements.txt /opt/netbox/
+sudo cp /opt/netbox-3.1.5/netbox/netbox/configuration.py /opt/netbox/netbox/netbox/
+sudo cp /opt/netbox-3.1.5/netbox/netbox/ldap_config.py /opt/netbox/netbox/netbox/
+sudo cp -pr /opt/netbox-3.1.5/netbox/media/ /opt/netbox/netbox/
+sudo cp -r /opt/netbox-3.1.5/netbox/scripts /opt/netbox/netbox/
+sudo cp -r /opt/netbox-3.1.5/netbox/reports /opt/netbox/netbox/
+sudo cp /opt/netbox-3.1.5/gunicorn.py /opt/netbox/
+sudo /opt/netbox/upgrade.sh
+sudo systemctl restart netbox netbox-rq
